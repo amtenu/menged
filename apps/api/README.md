@@ -1,7 +1,12 @@
-# apps/api — NestJS API
+# apps/api — NestJS
 
-Not started. Planned for weeks 3–4 (occupation and pathway endpoints, Drizzle schema and migrations, Jest + supertest, Cognito JWT guard).
+Menged public API.
 
-Scaffold it then with the Nest CLI, so the module, DI and DTO concepts are learned on real code rather than pre-generated here.
-
-Note: the Nest CLI and ts-jest currently require TypeScript below 7, which is why the workspace pins `typescript ~6.0.3` (see docs/adr/0002-typescript-version.md).
+```bash
+pnpm --filter @menged/api start:dev   # http://localhost:3000
+pnpm --filter @menged/api test
+pnpm --filter @menged/api test:e2e
+pnpm --filter @menged/api typecheck
+pnpm --filter @menged/api build
+pnpm --filter @menged/api lint
+```
