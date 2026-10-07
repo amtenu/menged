@@ -1,0 +1,36 @@
+# Node
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+# Real variable values stay local; commit only *.tfvars.example
+*.tfvars
+!*.tfvars.example
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+
+# Raw data downloads (NOC, OaSIS, Job Bank) — fetched by scripts, not committed
+data/raw/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
