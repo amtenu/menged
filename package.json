@@ -1,0 +1,21 @@
+{
+  "name": "menged",
+  "private": true,
+  "description": "Newcomer-first, licensing-aware career planner for Alberta",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "lint": "pnpm -r --if-present lint",
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down",
+    "db:psql": "docker compose exec db psql -U menged -d menged"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "~6.0.3"
+  }
+}

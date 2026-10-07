@@ -1,0 +1,17 @@
+{
+  "name": "@menged/shared",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Domain types and Zod schemas shared by the web app and the API",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "test": "vitest run --passWithNoTests"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.3"
+  }
+}
