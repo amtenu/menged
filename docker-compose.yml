@@ -1,0 +1,23 @@
+# Local development database. Production runs on RDS PostgreSQL with pgvector.
+# Keep the major version in step with the RDS engine version chosen in Terraform.
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: menged-db
+    environment:
+      POSTGRES_USER: menged
+      POSTGRES_PASSWORD: menged_local
+      POSTGRES_DB: menged
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U menged -d menged"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
