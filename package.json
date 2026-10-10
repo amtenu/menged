@@ -12,7 +12,10 @@
     "lint": "pnpm -r --if-present lint",
     "db:up": "docker compose up -d db",
     "db:down": "docker compose down",
-    "db:psql": "docker compose exec db psql -U menged -d menged"
+    "db:psql": "docker compose exec db psql -U menged -d menged",
+    "db:generate": "pnpm --filter @menged/db generate",
+    "db:migrate": "pnpm --filter @menged/db migrate",
+    "db:studio": "pnpm --filter @menged/db studio"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
